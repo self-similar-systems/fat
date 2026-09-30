@@ -43,9 +43,18 @@
   }
  ],
  "words": [
-  "du gefällst mir.",
-  "mir gefällst du.",
-  "nicht das ergebnis zählt... sondern immer der weg... das ist das lebendige"
+  {
+   "de": "du gefällst mir.",
+   "en": "you please me."
+  },
+  {
+   "de": "mir gefällst du.",
+   "en": "to me, you please."
+  },
+  {
+   "de": "Ein Schatten behält den Umriss und gibt die Tiefe her. Dreh ihn, und sie kommt zurück.",
+   "en": "A shadow keeps the outline and gives up the depth. Turn it, and the depth comes back."
+  }
  ],
  "works": [
   {
