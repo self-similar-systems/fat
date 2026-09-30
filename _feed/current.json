@@ -1,0 +1,11 @@
+{
+ "organism": "fat",
+ "holds": [
+  {
+   "organ": "philipp/schattenseiten",
+   "feed": "x/philipp/schattenseiten/feed.json",
+   "files": 94,
+   "bytes": 96719732
+  }
+ ]
+}

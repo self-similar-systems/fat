@@ -1,0 +1,512 @@
+{
+ "organ": "schattenseiten",
+ "publication": "ADMITTED by Philipp 2026-09-30: all 49 works (stills, their cluster positive/negative, animations where they exist). Nothing else in this organ is admitted.",
+ "operation": "set → one light → one shadow on a wall → a chooser takes seven → photographed → cropped → shuffled, three times per rank",
+ "ranks": [
+  {
+   "rank": 1,
+   "input": "the forest, a walk to the Schwarzenbergturm, 11.11.2023",
+   "rows": [
+    1
+   ],
+   "ids": "01001–01007"
+  },
+  {
+   "rank": 2,
+   "input": "the 7, overhead projector, three shuffles",
+   "rows": [
+    2,
+    3,
+    4
+   ],
+   "clusters": [
+    1,
+    2,
+    3
+   ],
+   "ids": "02001–02021"
+  },
+  {
+   "rank": 3,
+   "input": "the 28 (rows 1–4, four perspectives, one tetrahedron), three shuffles",
+   "rows": [
+    5,
+    6,
+    7
+   ],
+   "clusters": [
+    4,
+    5,
+    6
+   ],
+   "ids": "03001–03021"
+  }
+ ],
+ "words": [
+  "du gefällst mir.",
+  "mir gefällst du.",
+  "nicht das ergebnis zählt... sondern immer der weg... das ist das lebendige"
+ ],
+ "works": [
+  {
+   "id": "01001",
+   "rank": 1,
+   "row": 1,
+   "source": "forest",
+   "still": "still/01001.webp",
+   "animation": "animation/01001.webp"
+  },
+  {
+   "id": "01002",
+   "rank": 1,
+   "row": 1,
+   "source": "forest",
+   "still": "still/01002.webp",
+   "animation": "animation/01002.webp"
+  },
+  {
+   "id": "01003",
+   "rank": 1,
+   "row": 1,
+   "source": "forest",
+   "still": "still/01003.webp",
+   "animation": "animation/01003.webp"
+  },
+  {
+   "id": "01004",
+   "rank": 1,
+   "row": 1,
+   "source": "forest",
+   "still": "still/01004.webp",
+   "animation": "animation/01004.webp"
+  },
+  {
+   "id": "01005",
+   "rank": 1,
+   "row": 1,
+   "source": "forest",
+   "still": "still/01005.webp",
+   "animation": "animation/01005.webp"
+  },
+  {
+   "id": "01006",
+   "rank": 1,
+   "row": 1,
+   "source": "forest",
+   "still": "still/01006.webp",
+   "animation": "animation/01006.webp"
+  },
+  {
+   "id": "01007",
+   "rank": 1,
+   "row": 1,
+   "source": "forest",
+   "still": "still/01007.webp",
+   "animation": "animation/01007.webp"
+  },
+  {
+   "id": "02001",
+   "rank": 2,
+   "row": 2,
+   "source": "cluster 1",
+   "still": "still/02001.webp",
+   "cluster_positive": "cluster_positive/01100.webp",
+   "cluster_negative": "cluster_negative/01101.webp",
+   "animation": "animation/02001.webp"
+  },
+  {
+   "id": "02002",
+   "rank": 2,
+   "row": 2,
+   "source": "cluster 1",
+   "still": "still/02002.webp",
+   "cluster_positive": "cluster_positive/01100.webp",
+   "cluster_negative": "cluster_negative/01101.webp",
+   "animation": "animation/02002.webp"
+  },
+  {
+   "id": "02003",
+   "rank": 2,
+   "row": 2,
+   "source": "cluster 1",
+   "still": "still/02003.webp",
+   "cluster_positive": "cluster_positive/01100.webp",
+   "cluster_negative": "cluster_negative/01101.webp",
+   "animation": "animation/02003.webp"
+  },
+  {
+   "id": "02004",
+   "rank": 2,
+   "row": 2,
+   "source": "cluster 1",
+   "still": "still/02004.webp",
+   "cluster_positive": "cluster_positive/01100.webp",
+   "cluster_negative": "cluster_negative/01101.webp",
+   "animation": "animation/02004.webp"
+  },
+  {
+   "id": "02005",
+   "rank": 2,
+   "row": 2,
+   "source": "cluster 1",
+   "still": "still/02005.webp",
+   "cluster_positive": "cluster_positive/01100.webp",
+   "cluster_negative": "cluster_negative/01101.webp",
+   "animation": "animation/02005.webp"
+  },
+  {
+   "id": "02006",
+   "rank": 2,
+   "row": 2,
+   "source": "cluster 1",
+   "still": "still/02006.webp",
+   "cluster_positive": "cluster_positive/01100.webp",
+   "cluster_negative": "cluster_negative/01101.webp",
+   "animation": "animation/02006.webp"
+  },
+  {
+   "id": "02007",
+   "rank": 2,
+   "row": 2,
+   "source": "cluster 1",
+   "still": "still/02007.webp",
+   "cluster_positive": "cluster_positive/01100.webp",
+   "cluster_negative": "cluster_negative/01101.webp",
+   "animation": "animation/02007.webp"
+  },
+  {
+   "id": "02008",
+   "rank": 2,
+   "row": 3,
+   "source": "cluster 2",
+   "still": "still/02008.webp",
+   "cluster_positive": "cluster_positive/01200.webp",
+   "cluster_negative": "cluster_negative/01201.webp",
+   "animation": "animation/02008.webp"
+  },
+  {
+   "id": "02009",
+   "rank": 2,
+   "row": 3,
+   "source": "cluster 2",
+   "still": "still/02009.webp",
+   "cluster_positive": "cluster_positive/01200.webp",
+   "cluster_negative": "cluster_negative/01201.webp",
+   "animation": "animation/02009.webp"
+  },
+  {
+   "id": "02010",
+   "rank": 2,
+   "row": 3,
+   "source": "cluster 2",
+   "still": "still/02010.webp",
+   "cluster_positive": "cluster_positive/01200.webp",
+   "cluster_negative": "cluster_negative/01201.webp",
+   "animation": "animation/02010.webp"
+  },
+  {
+   "id": "02011",
+   "rank": 2,
+   "row": 3,
+   "source": "cluster 2",
+   "still": "still/02011.webp",
+   "cluster_positive": "cluster_positive/01200.webp",
+   "cluster_negative": "cluster_negative/01201.webp",
+   "animation": "animation/02011.webp"
+  },
+  {
+   "id": "02012",
+   "rank": 2,
+   "row": 3,
+   "source": "cluster 2",
+   "still": "still/02012.webp",
+   "cluster_positive": "cluster_positive/01200.webp",
+   "cluster_negative": "cluster_negative/01201.webp",
+   "animation": "animation/02012.webp"
+  },
+  {
+   "id": "02013",
+   "rank": 2,
+   "row": 3,
+   "source": "cluster 2",
+   "still": "still/02013.webp",
+   "cluster_positive": "cluster_positive/01200.webp",
+   "cluster_negative": "cluster_negative/01201.webp",
+   "animation": "animation/02013.webp"
+  },
+  {
+   "id": "02014",
+   "rank": 2,
+   "row": 3,
+   "source": "cluster 2",
+   "still": "still/02014.webp",
+   "cluster_positive": "cluster_positive/01200.webp",
+   "cluster_negative": "cluster_negative/01201.webp",
+   "animation": "animation/02014.webp"
+  },
+  {
+   "id": "02015",
+   "rank": 2,
+   "row": 4,
+   "source": "cluster 3",
+   "still": "still/02015.webp",
+   "cluster_positive": "cluster_positive/01300.webp",
+   "cluster_negative": "cluster_negative/01301.webp",
+   "animation": "animation/02015.webp"
+  },
+  {
+   "id": "02016",
+   "rank": 2,
+   "row": 4,
+   "source": "cluster 3",
+   "still": "still/02016.webp",
+   "cluster_positive": "cluster_positive/01300.webp",
+   "cluster_negative": "cluster_negative/01301.webp",
+   "animation": "animation/02016.webp"
+  },
+  {
+   "id": "02017",
+   "rank": 2,
+   "row": 4,
+   "source": "cluster 3",
+   "still": "still/02017.webp",
+   "cluster_positive": "cluster_positive/01300.webp",
+   "cluster_negative": "cluster_negative/01301.webp",
+   "animation": "animation/02017.webp"
+  },
+  {
+   "id": "02018",
+   "rank": 2,
+   "row": 4,
+   "source": "cluster 3",
+   "still": "still/02018.webp",
+   "cluster_positive": "cluster_positive/01300.webp",
+   "cluster_negative": "cluster_negative/01301.webp",
+   "animation": "animation/02018.webp"
+  },
+  {
+   "id": "02019",
+   "rank": 2,
+   "row": 4,
+   "source": "cluster 3",
+   "still": "still/02019.webp",
+   "cluster_positive": "cluster_positive/01300.webp",
+   "cluster_negative": "cluster_negative/01301.webp",
+   "animation": "animation/02019.webp"
+  },
+  {
+   "id": "02020",
+   "rank": 2,
+   "row": 4,
+   "source": "cluster 3",
+   "still": "still/02020.webp",
+   "cluster_positive": "cluster_positive/01300.webp",
+   "cluster_negative": "cluster_negative/01301.webp",
+   "animation": "animation/02020.webp"
+  },
+  {
+   "id": "02021",
+   "rank": 2,
+   "row": 4,
+   "source": "cluster 3",
+   "still": "still/02021.webp",
+   "cluster_positive": "cluster_positive/01300.webp",
+   "cluster_negative": "cluster_negative/01301.webp",
+   "animation": "animation/02021.webp"
+  },
+  {
+   "id": "03001",
+   "rank": 3,
+   "row": 5,
+   "source": "cluster 4",
+   "still": "still/03001.webp",
+   "cluster_positive": "cluster_positive/02100.webp",
+   "cluster_negative": "cluster_negative/02101.webp",
+   "animation": "animation/03001.webp"
+  },
+  {
+   "id": "03002",
+   "rank": 3,
+   "row": 5,
+   "source": "cluster 4",
+   "still": "still/03002.webp",
+   "cluster_positive": "cluster_positive/02100.webp",
+   "cluster_negative": "cluster_negative/02101.webp",
+   "animation": "animation/03002.webp"
+  },
+  {
+   "id": "03003",
+   "rank": 3,
+   "row": 5,
+   "source": "cluster 4",
+   "still": "still/03003.webp",
+   "cluster_positive": "cluster_positive/02100.webp",
+   "cluster_negative": "cluster_negative/02101.webp",
+   "animation": "animation/03003.webp"
+  },
+  {
+   "id": "03004",
+   "rank": 3,
+   "row": 5,
+   "source": "cluster 4",
+   "still": "still/03004.webp",
+   "cluster_positive": "cluster_positive/02100.webp",
+   "cluster_negative": "cluster_negative/02101.webp",
+   "animation": "animation/03004.webp"
+  },
+  {
+   "id": "03005",
+   "rank": 3,
+   "row": 5,
+   "source": "cluster 4",
+   "still": "still/03005.webp",
+   "cluster_positive": "cluster_positive/02100.webp",
+   "cluster_negative": "cluster_negative/02101.webp",
+   "animation": "animation/03005.webp"
+  },
+  {
+   "id": "03006",
+   "rank": 3,
+   "row": 5,
+   "source": "cluster 4",
+   "still": "still/03006.webp",
+   "cluster_positive": "cluster_positive/02100.webp",
+   "cluster_negative": "cluster_negative/02101.webp"
+  },
+  {
+   "id": "03007",
+   "rank": 3,
+   "row": 5,
+   "source": "cluster 4",
+   "still": "still/03007.webp",
+   "cluster_positive": "cluster_positive/02100.webp",
+   "cluster_negative": "cluster_negative/02101.webp"
+  },
+  {
+   "id": "03008",
+   "rank": 3,
+   "row": 6,
+   "source": "cluster 5",
+   "still": "still/03008.webp",
+   "cluster_positive": "cluster_positive/02200.webp",
+   "cluster_negative": "cluster_negative/02201.webp"
+  },
+  {
+   "id": "03009",
+   "rank": 3,
+   "row": 6,
+   "source": "cluster 5",
+   "still": "still/03009.webp",
+   "cluster_positive": "cluster_positive/02200.webp",
+   "cluster_negative": "cluster_negative/02201.webp"
+  },
+  {
+   "id": "03010",
+   "rank": 3,
+   "row": 6,
+   "source": "cluster 5",
+   "still": "still/03010.webp",
+   "cluster_positive": "cluster_positive/02200.webp",
+   "cluster_negative": "cluster_negative/02201.webp"
+  },
+  {
+   "id": "03011",
+   "rank": 3,
+   "row": 6,
+   "source": "cluster 5",
+   "still": "still/03011.webp",
+   "cluster_positive": "cluster_positive/02200.webp",
+   "cluster_negative": "cluster_negative/02201.webp"
+  },
+  {
+   "id": "03012",
+   "rank": 3,
+   "row": 6,
+   "source": "cluster 5",
+   "still": "still/03012.webp",
+   "cluster_positive": "cluster_positive/02200.webp",
+   "cluster_negative": "cluster_negative/02201.webp"
+  },
+  {
+   "id": "03013",
+   "rank": 3,
+   "row": 6,
+   "source": "cluster 5",
+   "still": "still/03013.webp",
+   "cluster_positive": "cluster_positive/02200.webp",
+   "cluster_negative": "cluster_negative/02201.webp"
+  },
+  {
+   "id": "03014",
+   "rank": 3,
+   "row": 6,
+   "source": "cluster 5",
+   "still": "still/03014.webp",
+   "cluster_positive": "cluster_positive/02200.webp",
+   "cluster_negative": "cluster_negative/02201.webp"
+  },
+  {
+   "id": "03015",
+   "rank": 3,
+   "row": 7,
+   "source": "cluster 6",
+   "still": "still/03015.webp",
+   "cluster_positive": "cluster_positive/02300.webp",
+   "cluster_negative": "cluster_negative/02301.webp"
+  },
+  {
+   "id": "03016",
+   "rank": 3,
+   "row": 7,
+   "source": "cluster 6",
+   "still": "still/03016.webp",
+   "cluster_positive": "cluster_positive/02300.webp",
+   "cluster_negative": "cluster_negative/02301.webp"
+  },
+  {
+   "id": "03017",
+   "rank": 3,
+   "row": 7,
+   "source": "cluster 6",
+   "still": "still/03017.webp",
+   "cluster_positive": "cluster_positive/02300.webp",
+   "cluster_negative": "cluster_negative/02301.webp"
+  },
+  {
+   "id": "03018",
+   "rank": 3,
+   "row": 7,
+   "source": "cluster 6",
+   "still": "still/03018.webp",
+   "cluster_positive": "cluster_positive/02300.webp",
+   "cluster_negative": "cluster_negative/02301.webp"
+  },
+  {
+   "id": "03019",
+   "rank": 3,
+   "row": 7,
+   "source": "cluster 6",
+   "still": "still/03019.webp",
+   "cluster_positive": "cluster_positive/02300.webp",
+   "cluster_negative": "cluster_negative/02301.webp"
+  },
+  {
+   "id": "03020",
+   "rank": 3,
+   "row": 7,
+   "source": "cluster 6",
+   "still": "still/03020.webp",
+   "cluster_positive": "cluster_positive/02300.webp",
+   "cluster_negative": "cluster_negative/02301.webp"
+  },
+  {
+   "id": "03021",
+   "rank": 3,
+   "row": 7,
+   "source": "cluster 6",
+   "still": "still/03021.webp",
+   "cluster_positive": "cluster_positive/02300.webp",
+   "cluster_negative": "cluster_negative/02301.webp"
+  }
+ ]
+}
