@@ -1,0 +1,66 @@
+{
+  "kind": "HOME",
+  "home_at_utc": "2026-10-03T11:13:36Z",
+  "delivery_state": "HOME_DURABLE_FEED_ASYNC",
+  "event_id": "fat-schattenseiten-sized-media-20261003T111336Z",
+  "organism": "fat",
+  "entrypoint": "github.fat",
+  "operation": "derive-admitted-public-media-at-512",
+  "outcome": "PASS/EARNED locally in staging; canonical Fat merge/release remains open.",
+  "changed_scope": [
+    "z/media_variants.py and its six behavioral tests",
+    "z/deposit.py integration and managed-deposit admission cleanup",
+    "94 sized WebPs plus relative media_variants.512 in the existing public deposit",
+    "_feed/current.json actual totals",
+    "RITUALS/fat 1.1 and narrowed source intake"
+  ],
+  "context": {
+    "actor": "Mnemos foreground with Forge, session 33Η",
+    "base_revision": "2d7d5ab037f883bad7f8ff79c375f46c670c434e",
+    "carrier": "QuantumCephalopod/fat staging/schattenseiten-texture512-20261003",
+    "witness": {
+      "original_media": {
+        "files": 94,
+        "bytes": 96719732,
+        "all_sha256_unchanged": true
+      },
+      "variants": {
+        "files": 94,
+        "bytes": 44774854,
+        "saved_bytes": 51944878,
+        "reduction_percent": 53.707,
+        "dimensions": {
+          "329x512": 2,
+          "341x512": 2,
+          "363x512": 2,
+          "391x512": 2,
+          "419x512": 2,
+          "421x512": 2,
+          "512x512": 82
+        }
+      },
+      "initial_textures": {
+        "files": 55,
+        "original_bytes": 4115692,
+        "variant_bytes": 560350,
+        "reduction_percent": 86.385
+      },
+      "animation": {
+        "files": 33,
+        "frames_each": 32,
+        "all_durations_loop_background_preserved": true,
+        "friction": []
+      },
+      "signal": {
+        "files": 188,
+        "bytes": 141494586
+      },
+      "tests": "Six native tests passed: dimensions/path containment, shared sources, no upscale, exact derived retirement, private/unadmitted refusal, actual animated encode/decode plus deterministic regeneration, native deposition keeps variants and removes unadmitted stray.",
+      "browser": "Foreground CUA used same-origin public Fat x in a separate temporary image-proof environment: all 55 declared sized requests, 55 output bitmaps 512x512, no HTTP/console errors; sheet complete with 49 shadows and 6 clusters."
+    },
+    "publication_dependency": "Fat must merge and release its sized URLs before the Cambium consumer is promoted.",
+    "not_witnessed_at_home": [
+      "Canonical owner merge/release and live availability of sized media"
+    ]
+  }
+}
