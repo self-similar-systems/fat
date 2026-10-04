@@ -1,7 +1,7 @@
 ---
 name: fat
 description: "Local receptor for fat: the single reserve beneath sss.saarland's skin that holds every organ's admitted media, releases it on demand, fails closed, and signals what it holds."
-version: "1.1"
+version: "1.2"
 ---
 
 # FAT — local receptor
@@ -25,5 +25,9 @@ Enter through the shared-root field first; this receptor adds only what is local
 ## Shell
 
 `_stomach` for incoming deposit requests, `_feed` = the signal, `_root` = HOME rings of deposits, `_waste` for retired deposits' records.
+
+The same admitted generator also supports tier64 (`z/media_variants.py <feed> 64`). Native deposition regenerates both64 and512 declarations, preserving the other tier during scoped generation. `media_revisions` binds each tier's declared paths to actual output hashes for consumer cache identity. Tier64 is ordinary source-owned derivative media, not new artwork anatomy; the consumer alone decides when each tier may be requested. All path/admission, no-upscale, original-preservation and animation-readback barriers above apply equally to both tiers.
+
+Version 1.2 preview64 correction (2026-10-04): declared64 derivatives and tier revisions support strict low-tier previews while preserving512 assets/declarations. No source, publication admission or reserve topology changes.
 
 Version 1.1 sized-media correction (2026-10-03): admitted images now have source-faithful 512 variants in the same unmetered reserve, with relative public declarations, full animation-semantic witnesses, exact derived retirement and managed-deposit admission checks. Release remains the existing GitHub Pages workflow; HOME follows the final organism witness.

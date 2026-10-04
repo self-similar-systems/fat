@@ -59,7 +59,9 @@ def main(organ_root: str, address: str) -> None:
     # Variants are derived only after organ paths have become public deposit paths.
     # Never import an organ-private/stale variant declaration as publication authority.
     public.pop("media_variants", None)
+    public.pop("media_revisions", None)
     report = generate(dest, public, audit=False)
+    report = generate(dest, report["feed"], size=64, audit=False)
     kept.add(dest / "feed.json")
     kept.update(contained(dest, path) for path in declared_paths(dest, report["feed"]))
     # Preserve the managed-deposit fail-closed cleanup: unknown/unadmitted files

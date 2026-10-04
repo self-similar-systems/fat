@@ -1,6 +1,6 @@
-"""Derived 512 WebPs from one admitted public deposit, never private source.
+"""Declared 64/512 WebPs from one admitted public deposit, never private source.
 
-    python z/media_variants.py x/<address>/feed.json
+    python z/media_variants.py x/<address>/feed.json [64|512]
 
 The public feed keeps its works/words and declares only relative variant paths.
 Animations are accepted only after full frame/timing/loop/background readback.
@@ -58,9 +58,9 @@ def contained(deposit: Path, relative: str) -> Path:
     return resolved
 
 
-def variant_path(source: str) -> str:
+def variant_path(source: str, size: int = SIZE) -> str:
     source = media_path(source)
-    return f"sizes/{SIZE}/{source}" + ("" if source.lower().endswith(".webp") else ".webp")
+    return f"sizes/{size}/{source}" + ("" if source.lower().endswith(".webp") else ".webp")
 
 
 def declared_paths(deposit: Path, feed: dict) -> set[str]:
@@ -136,16 +136,16 @@ def animation_info(image: Image.Image) -> dict:
     return {"frames": image.n_frames, "durations": durations, "loop": loop, "background": background}
 
 
-def encode_variant(source: Path) -> tuple[bytes | None, dict]:
+def encode_variant(source: Path, size: int = SIZE) -> tuple[bytes | None, dict]:
     with Image.open(source) as image:
         original_size = image.size
         info = {"source_size": list(original_size), "source_frames": getattr(image, "n_frames", 1)}
-        if max(original_size) <= SIZE:
-            return None, {**info, "skipped": "already within 512; no upscaling"}
+        if max(original_size) <= size:
+            return None, {**info, "skipped": f"already within {size}; no upscaling"}
         output = BytesIO()
         if info["source_frames"] == 1:
             frame = image.convert("RGBA" if "A" in image.getbands() or "transparency" in image.info else "RGB")
-            frame.thumbnail((SIZE, SIZE), Image.Resampling.LANCZOS)
+            frame.thumbnail((size, size), Image.Resampling.LANCZOS)
             frame.save(output, "WEBP", quality=90, method=6)
             expected_size = frame.size
             frame.close()
@@ -157,7 +157,7 @@ def encode_variant(source: Path) -> tuple[bytes | None, dict]:
                 for index in range(image.n_frames):
                     image.seek(index)
                     frame = image.convert("RGBA")
-                    frame.thumbnail((SIZE, SIZE), Image.Resampling.LANCZOS)
+                    frame.thumbnail((size, size), Image.Resampling.LANCZOS)
                     frames.append(frame)
                 expected_size = frames[0].size
                 frames[0].save(output, "WEBP", save_all=True, append_images=frames[1:],
@@ -170,7 +170,7 @@ def encode_variant(source: Path) -> tuple[bytes | None, dict]:
                     frame.close()
         data = output.getvalue()
         with Image.open(BytesIO(data)) as decoded:
-            if decoded.size != expected_size or max(decoded.size) > SIZE:
+            if decoded.size != expected_size or max(decoded.size) > size:
                 raise ValueError("variant dimensions did not round-trip")
             if expected is not None:
                 actual = animation_info(decoded)
@@ -183,7 +183,9 @@ def encode_variant(source: Path) -> tuple[bytes | None, dict]:
         return data, {**info, "size": list(expected_size), "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
 
 
-def generate(deposit: Path, public: dict | None = None, *, audit: bool = True, progress=None) -> dict:
+def generate(deposit: Path, public: dict | None = None, *, size: int = SIZE, audit: bool = True, progress=None) -> dict:
+    if size not in (64, 512):
+        raise ValueError("only admitted preview64 and entered512 tiers are supported")
     deposit = deposit.resolve()
     feed_path = deposit / "feed.json"
     previous = read_feed(feed_path) if feed_path.exists() else {"works": []}
@@ -193,7 +195,7 @@ def generate(deposit: Path, public: dict | None = None, *, audit: bool = True, p
     if audit:
         audit_deposit(deposit, previous)
     # Validate all admitted sources and exact target scopes before opening any media.
-    targets = {source: contained(deposit, variant_path(source)) for source in sorted(sources)}
+    targets = {source: contained(deposit, variant_path(source, size)) for source in sorted(sources)}
     inputs = {source: contained(deposit, source) for source in sorted(sources)}
     if not all(path.is_file() for path in inputs.values()):
         raise ValueError("admitted public media is missing")
@@ -201,7 +203,7 @@ def generate(deposit: Path, public: dict | None = None, *, audit: bool = True, p
     def encode(item):
         source, path = item
         try:
-            data, info = encode_variant(path)
+            data, info = encode_variant(path, size)
             return source, data, info, None
         except AnimationFriction as error:
             return source, None, None, str(error)
@@ -216,7 +218,7 @@ def generate(deposit: Path, public: dict | None = None, *, audit: bool = True, p
                 continue
             entries.append({"source": source, **info})
             if data is not None:
-                target = variant_path(source)
+                target = variant_path(source, size)
                 mapping[source] = target
                 plans[target] = data
             if progress:
@@ -224,10 +226,15 @@ def generate(deposit: Path, public: dict | None = None, *, audit: bool = True, p
     variants = copy.deepcopy(public.get("media_variants", {}))
     if not isinstance(variants, dict):
         raise ValueError("variant metadata must be an object")
-    variants[str(SIZE)] = mapping
+    variants[str(size)] = mapping
     public["media_variants"] = variants
+    revisions = copy.deepcopy(public.get("media_revisions", {}))
+    revisions[str(size)] = "sha256:" + hashlib.sha256(json.dumps(
+        sorted((source, target, hashlib.sha256(plans[target]).hexdigest()) for source, target in mapping.items()),
+        separators=(",", ":")).encode()).hexdigest()
+    public["media_revisions"] = revisions
     declared_paths(deposit, public)
-    stale = sorted(path for path in previous_declared - set(mapping.values()) if path.startswith(f"sizes/{SIZE}/"))
+    stale = sorted(path for path in previous_declared - set(mapping.values()) if path.startswith(f"sizes/{size}/"))
     # Every retirement was previously attached to admitted works and matches its
     # exact derived path. Never glob/delete arbitrary files in the sizes tree.
     retire = [contained(deposit, path) for path in stale]
@@ -252,14 +259,14 @@ def generate(deposit: Path, public: dict | None = None, *, audit: bool = True, p
             "retired": stale, "variant_count": len(mapping), "variant_bytes": sum(len(data) for data in plans.values())}
 
 
-def main(feed_path: str) -> None:
+def main(feed_path: str, size: int = SIZE) -> None:
     feed = Path(feed_path).resolve()
     reserve = Path(__file__).resolve().parent.parent / "x"
     if reserve.resolve() not in feed.parents or feed.name != "feed.json":
         raise SystemExit("refused: generator accepts only x/<address>/feed.json")
-    report = generate(feed.parent, progress=lambda source, status: print(f"{status}: {source}", file=sys.stderr, flush=True))
+    report = generate(feed.parent, size=size, progress=lambda source, status: print(f"{status}: {source}", file=sys.stderr, flush=True))
     print(json.dumps(report, ensure_ascii=False, indent=1))
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(sys.argv[1], int(sys.argv[2]) if len(sys.argv)>2 else SIZE)
