@@ -14,6 +14,28 @@ import deposit
 
 
 class PublicVariants(unittest.TestCase):
+    def test_tier64_preserves512_and_replays_revision(self):
+        self.image("still/one.webp", (1024, 1024))
+        self.feed([{"still":"still/one.webp"}])
+        high=V.generate(self.d)
+        high_path=self.d/high["media_variants"]["still/one.webp"]
+        before=high_path.read_bytes()
+        low=V.generate(self.d,size=64)
+        with Image.open(self.d/low["media_variants"]["still/one.webp"]) as image:
+            self.assertEqual(image.size,(64,64))
+        self.assertEqual(high_path.read_bytes(),before)
+        self.assertEqual(low["feed"]["media_variants"]["512"],high["media_variants"])
+        self.assertEqual(V.generate(self.d,size=64)["feed"]["media_revisions"]["64"],low["feed"]["media_revisions"]["64"])
+        with self.assertRaises(ValueError): V.generate(self.d,size=128)
+
+    def test_tier64_animation_semantics(self):
+        original=self.animation();self.feed([{"animation":"animation/sequence.webp"}])
+        low=V.generate(self.d,size=64)
+        self.assertEqual(low["friction"],[])
+        with Image.open(original) as image: expected=V.animation_info(image)
+        with Image.open(self.d/low["media_variants"]["animation/sequence.webp"]) as image:
+            self.assertEqual(V.animation_info(image),expected);self.assertLessEqual(max(image.size),64)
+
     def setUp(self):
         self.scratch = Path(__file__).resolve().parents[2]
         self.temp = tempfile.TemporaryDirectory(prefix="fat-variants-test-", dir=self.scratch)
